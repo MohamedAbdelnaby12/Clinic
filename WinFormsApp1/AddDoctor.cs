@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace WinFormsApp1
 {
-    public partial class Book : Form
+    public partial class AddDoctor : Form
     {
-        public Book()
+        public AddDoctor()
         {
             InitializeComponent();
         }
@@ -22,19 +22,17 @@ namespace WinFormsApp1
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            AddPatient form1 = new AddPatient();
-            form1.Show();
-            this.Close();
-        }
-
-        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        private void label4_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void Book_Load(object sender, EventArgs e)
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
         {
 
         }

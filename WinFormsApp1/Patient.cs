@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace WinFormsApp1
 {
-    public partial class Doctor : Form
+    public partial class Patient : Form
     {
-        public Doctor()
+        public Patient()
         {
             InitializeComponent();
-        }
-
-        private void Doctor_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
@@ -27,17 +22,22 @@ namespace WinFormsApp1
 
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
-            AddDoctor addDoctor = new AddDoctor();
-            addDoctor.Show();
+            AddPatient addPatient = new AddPatient();
+            addPatient.Show();
             //this.Hide();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            UpdateDoctor updateDoctor = new UpdateDoctor();
-            updateDoctor.Show();
+            UpdatePatient updatePatient = new UpdatePatient();
+            updatePatient.Show();
             //this.Hide();
         }
     }
