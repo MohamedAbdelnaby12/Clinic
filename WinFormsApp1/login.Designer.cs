@@ -32,10 +32,10 @@
             pictureBox3 = new PictureBox();
             panel1 = new Panel();
             pictureBox4 = new PictureBox();
-            textBox1 = new TextBox();
+            UserName = new TextBox();
             panel2 = new Panel();
             pictureBox5 = new PictureBox();
-            textBox2 = new TextBox();
+            Password = new TextBox();
             pictureBox2 = new PictureBox();
             label1 = new Label();
             label3 = new Label();
@@ -74,7 +74,7 @@
             panel1.BackColor = Color.White;
             panel1.BorderStyle = BorderStyle.FixedSingle;
             panel1.Controls.Add(pictureBox4);
-            panel1.Controls.Add(textBox1);
+            panel1.Controls.Add(UserName);
             panel1.Location = new Point(131, 368);
             panel1.Name = "panel1";
             panel1.Size = new Size(442, 84);
@@ -91,20 +91,20 @@
             pictureBox4.TabIndex = 29;
             pictureBox4.TabStop = false;
             // 
-            // textBox1
+            // UserName
             // 
-            textBox1.Location = new Point(87, 25);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(337, 27);
-            textBox1.TabIndex = 0;
-            textBox1.TextChanged += textBox1_TextChanged;
+            UserName.Location = new Point(87, 25);
+            UserName.Name = "UserName";
+            UserName.Size = new Size(337, 27);
+            UserName.TabIndex = 0;
+            UserName.TextChanged += textBox1_TextChanged;
             // 
             // panel2
             // 
             panel2.BackColor = Color.White;
             panel2.BorderStyle = BorderStyle.FixedSingle;
             panel2.Controls.Add(pictureBox5);
-            panel2.Controls.Add(textBox2);
+            panel2.Controls.Add(Password);
             panel2.Location = new Point(131, 515);
             panel2.Name = "panel2";
             panel2.Size = new Size(442, 70);
@@ -120,12 +120,12 @@
             pictureBox5.TabIndex = 30;
             pictureBox5.TabStop = false;
             // 
-            // textBox2
+            // Password
             // 
-            textBox2.Location = new Point(103, 21);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(312, 27);
-            textBox2.TabIndex = 0;
+            Password.Location = new Point(103, 21);
+            Password.Name = "Password";
+            Password.Size = new Size(312, 27);
+            Password.TabIndex = 0;
             // 
             // pictureBox2
             // 
@@ -209,9 +209,9 @@
         private PictureBox pictureBox1;
         private PictureBox pictureBox3;
         private Panel panel1;
-        private TextBox textBox1;
+        private TextBox UserName;
         private Panel panel2;
-        private TextBox textBox2;
+        private TextBox Password;
         private PictureBox pictureBox2;
         private Label label1;
         private PictureBox pictureBox4;
