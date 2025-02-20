@@ -33,5 +33,10 @@ namespace WinFormsApp1
         {
 
         }
+
+        private void Book_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
