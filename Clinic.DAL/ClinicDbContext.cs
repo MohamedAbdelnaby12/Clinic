@@ -7,6 +7,10 @@ namespace Clinic.DAL
 {
     public class ClinicDbContext : IdentityDbContext<Receptionist, IdentityRole<int>, int>
     {
+        public ClinicDbContext(DbContextOptions<ClinicDbContext> options) : base(options)
+        {
+        }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer("server=.;database=Clinic;Trusted_connection=True;TrustServerCertificate=True;");
