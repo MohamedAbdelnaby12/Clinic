@@ -1,14 +1,9 @@
 ﻿using Clinic.DAL.Enums;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Clinic.DAL.Entities
 {
-    public class Patient :BaseEntity
+    public class Patient : BaseEntity
     {
         public string Name { get; set; }
         public int Age { get; set; }
@@ -19,5 +14,7 @@ namespace Clinic.DAL.Entities
 
         //Relations
         public ICollection<Appointment> Appointments = new HashSet<Appointment>();
+
+
     }
 }

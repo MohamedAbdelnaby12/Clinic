@@ -12,6 +12,14 @@
     <PackageReference Include="MaterialSkin" Version="0.2.1" />
     <PackageReference Include="MetroFramework" Version="1.2.0.3" />
     <PackageReference Include="MetroFramework.Design" Version="1.2.0.3" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.13" />
+	  <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.13" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Clinic.BLL\Clinic.BLL.csproj" />
+    <ProjectReference Include="..\Clinic.DAL\Clinic.DAL.csproj" />
   </ItemGroup>
 
   <ItemGroup>
