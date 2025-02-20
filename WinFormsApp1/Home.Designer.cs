@@ -40,7 +40,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.Smile__4_;
-            pictureBox1.Location = new Point(40, 25);
+            pictureBox1.Location = new Point(71, 1);
             pictureBox1.Margin = new Padding(3, 2, 3, 2);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(456, 71);
@@ -52,10 +52,10 @@
             pictureBox3.BackColor = Color.White;
             pictureBox3.BackgroundImageLayout = ImageLayout.Center;
             pictureBox3.BorderStyle = BorderStyle.FixedSingle;
-            pictureBox3.Location = new Point(40, 120);
+            pictureBox3.Location = new Point(71, 76);
             pictureBox3.Margin = new Padding(3, 2, 3, 2);
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(459, 475);
+            pictureBox3.Size = new Size(459, 495);
             pictureBox3.TabIndex = 36;
             pictureBox3.TabStop = false;
             // 
@@ -64,10 +64,10 @@
             button1.BackColor = Color.FromArgb(32, 59, 73);
             button1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button1.ForeColor = SystemColors.ButtonHighlight;
-            button1.Location = new Point(192, 178);
+            button1.Location = new Point(224, 147);
             button1.Margin = new Padding(3, 2, 3, 2);
             button1.Name = "button1";
-            button1.Size = new Size(158, 38);
+            button1.Size = new Size(158, 58);
             button1.TabIndex = 37;
             button1.Text = "Doctor";
             button1.UseVisualStyleBackColor = false;
@@ -78,10 +78,10 @@
             button2.BackColor = Color.FromArgb(32, 59, 73);
             button2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button2.ForeColor = SystemColors.ButtonHighlight;
-            button2.Location = new Point(192, 332);
+            button2.Location = new Point(224, 314);
             button2.Margin = new Padding(3, 2, 3, 2);
             button2.Name = "button2";
-            button2.Size = new Size(158, 38);
+            button2.Size = new Size(158, 58);
             button2.TabIndex = 38;
             button2.Text = "Patient";
             button2.UseVisualStyleBackColor = false;
@@ -92,10 +92,10 @@
             button3.BackColor = Color.FromArgb(32, 59, 73);
             button3.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button3.ForeColor = SystemColors.ButtonHighlight;
-            button3.Location = new Point(192, 490);
+            button3.Location = new Point(224, 465);
             button3.Margin = new Padding(3, 2, 3, 2);
             button3.Name = "button3";
-            button3.Size = new Size(158, 38);
+            button3.Size = new Size(158, 58);
             button3.TabIndex = 39;
             button3.Text = "Report";
             button3.UseVisualStyleBackColor = false;
@@ -106,7 +106,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(32, 59, 73);
-            ClientSize = new Size(557, 562);
+            ClientSize = new Size(610, 562);
             Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(button1);
