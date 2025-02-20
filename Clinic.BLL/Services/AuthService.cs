@@ -1,4 +1,5 @@
-﻿using Clinic.DAL.Entities;
+﻿using Clinic.BLL.Services.Abstract;
+using Clinic.DAL.Entities;
 using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Clinic.BLL.Services
 {
-    public class AuthService
+    public class AuthService : IAuthService
     {
         private readonly UserManager<Receptionist> _userManager;
 
