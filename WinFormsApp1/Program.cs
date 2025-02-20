@@ -81,9 +81,9 @@ namespace WinFormsApp1
             services.AddScoped<UpdatePatient>();
             #endregion
 
-
-
             services.AddScoped<login>();
+
+
             //services.AddScoped<MainForm>();
         }
     }

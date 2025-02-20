@@ -28,7 +28,6 @@ namespace WinFormsApp1
             if (isUpdated)
                 MessageBox.Show("Updated Successfully");
             MessageBox.Show("Failed To Update");
-
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
