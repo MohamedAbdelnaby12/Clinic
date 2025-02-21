@@ -42,5 +42,9 @@ namespace Clinic.BLL.Services
                 await _repository.DeleteAsync(receptionist);
             }
         }
+        public Task<bool> AddReceptionistAndUserAsync(string name, string phone, string email, string password)
+        {
+            return _repository.AddReceptionistAndUserAsync( name,  phone,  email,  password);
+        }
     }
 }

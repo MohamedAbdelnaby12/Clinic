@@ -34,5 +34,21 @@ namespace Clinic.BLL.Services
             bool isPasswordValid = await _userManager.CheckPasswordAsync(user, password);
             return isPasswordValid;
         }
+        public async Task<bool> CheckAdminRole(string userName)
+        {
+            var user = await _userManager.FindByNameAsync(userName);
+            if (user == null)
+                return false; 
+
+            var roles = await _userManager.GetRolesAsync(user);
+
+            // Check if the user has the "Admin" role
+            if (roles.Contains("Admin"))
+            {
+                return true;
+            }
+
+            return false; 
+        }
     }
 }
