@@ -1,15 +1,6 @@
 ﻿using Clinic.BLL.Repository.Abstract;
 using Clinic.BLL.Services.Abstract;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using static System.Windows.Forms.DataFormats;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace WinFormsApp1
 {
@@ -20,7 +11,7 @@ namespace WinFormsApp1
         private readonly IReceptionistService _receptionistService;
         private readonly IAuthService _authService;
 
-        public Home(IPatientService patientService, bool isAdmin,IReceptionistService receptionistService,IAuthService authService)
+        public Home(IPatientService patientService, bool isAdmin, IReceptionistService receptionistService, IAuthService authService)
         {
             InitializeComponent();
             _patientService = patientService;
@@ -44,8 +35,13 @@ namespace WinFormsApp1
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Patient Patient = new Patient(_patientService);
-            Patient.Show();
+            var patient = Program.ServiceProvider.GetRequiredService<PatientWindow>();
+            patient.Show();
+            //Patient Patient = new Patient();
+            //Patient.Show();
+            ////this.Hide();
+            //PatientWindow Patient = new PatientWindow(_patientService);
+            //Patient.Show();
             //this.Hide();
         }
 
@@ -58,7 +54,7 @@ namespace WinFormsApp1
 
         private void addUser_Click(object sender, EventArgs e)
         {
-            AddUser addUser = new AddUser(_receptionistService ,_authService);
+            AddUser addUser = new AddUser(_receptionistService, _authService);
             addUser.Show();
         }
     }

@@ -5,5 +5,6 @@ namespace Clinic.DAL.Repository.Abstract
 {
     public interface IPatientRepository : IGenericRepository<Patient>
     {
+        Task<List<Patient>> GetPatientsByNameAsync(string Name);
     }
 }

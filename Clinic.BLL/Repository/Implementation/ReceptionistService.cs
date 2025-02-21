@@ -1,7 +1,6 @@
 ﻿using Clinic.BLL.Repository.Abstract;
 using Clinic.DAL.Entities;
 using Clinic.DAL.Repository.Abstract;
-using Clinic.DAL.Repository.Implementation;
 
 namespace Clinic.BLL.Services
 {
@@ -39,7 +38,7 @@ namespace Clinic.BLL.Services
             var receptionist = await _repository.GetByIdAsync(id);
             if (receptionist != null)
             {
-                await _repository.DeleteAsync(receptionist);
+                await _repository.DeleteAsync(id);
             }
         }
         public Task<bool> AddReceptionistAndUserAsync(string name, string phone, string email, string password)

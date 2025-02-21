@@ -16,12 +16,13 @@ namespace Clinic.DAL.GenericRepo
         public async Task<T> AddAsync(T entity)
         {
             await _entity.AddAsync(entity);
-            _clinicDb.SaveChangesAsync();
+            await _clinicDb.SaveChangesAsync();
             return entity;
         }
 
-        public async Task DeleteAsync(T entity)
+        public async Task DeleteAsync(int Id)
         {
+            var entity = await GetByIdAsync(Id);
             _entity.Remove(entity);
             await _clinicDb.SaveChangesAsync();
         }

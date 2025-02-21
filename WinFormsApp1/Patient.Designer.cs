@@ -1,6 +1,6 @@
 ﻿namespace WinFormsApp1
 {
-    partial class Patient
+    partial class PatientWindow
     {
         /// <summary>
         /// Required designer variable.
@@ -28,21 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Patient));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PatientWindow));
             logoname = new Label();
             button1 = new Button();
             pictureBox3 = new PictureBox();
             pictureBox1 = new PictureBox();
-            textBox1 = new TextBox();
+            Patient_Search_TxtBox = new TextBox();
             button2 = new Button();
-            dataGridView1 = new DataGridView();
+            Patient_DGV = new DataGridView();
             button3 = new Button();
             button4 = new Button();
             button5 = new Button();
             button6 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)Patient_DGV).BeginInit();
             SuspendLayout();
             // 
             // logoname
@@ -92,12 +92,13 @@
             pictureBox1.TabIndex = 35;
             pictureBox1.TabStop = false;
             // 
-            // textBox1
+            // Patient_Search_TxtBox
             // 
-            textBox1.Location = new Point(96, 111);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(133, 23);
-            textBox1.TabIndex = 47;
+            Patient_Search_TxtBox.Location = new Point(96, 111);
+            Patient_Search_TxtBox.Name = "Patient_Search_TxtBox";
+            Patient_Search_TxtBox.Size = new Size(133, 23);
+            Patient_Search_TxtBox.TabIndex = 47;
+            Patient_Search_TxtBox.TextChanged += textBox1_TextChanged;
             // 
             // button2
             // 
@@ -113,13 +114,13 @@
             button2.UseVisualStyleBackColor = false;
             button2.Click += button2_Click;
             // 
-            // dataGridView1
+            // Patient_DGV
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(96, 154);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(424, 217);
-            dataGridView1.TabIndex = 49;
+            Patient_DGV.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            Patient_DGV.Location = new Point(96, 154);
+            Patient_DGV.Name = "Patient_DGV";
+            Patient_DGV.Size = new Size(424, 217);
+            Patient_DGV.TabIndex = 49;
             // 
             // button3
             // 
@@ -147,6 +148,7 @@
             button4.TabIndex = 51;
             button4.Text = "Delete";
             button4.UseVisualStyleBackColor = false;
+            button4.Click += button4_Click;
             // 
             // button5
             // 
@@ -160,6 +162,7 @@
             button5.TabIndex = 52;
             button5.Text = "Import";
             button5.UseVisualStyleBackColor = false;
+            button5.Click += button5_Click;
             // 
             // button6
             // 
@@ -173,8 +176,9 @@
             button6.TabIndex = 53;
             button6.Text = "Export";
             button6.UseVisualStyleBackColor = false;
+            button6.Click += button6_Click;
             // 
-            // Patient
+            // PatientWindow
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -184,18 +188,18 @@
             Controls.Add(button5);
             Controls.Add(button4);
             Controls.Add(button3);
-            Controls.Add(dataGridView1);
+            Controls.Add(Patient_DGV);
             Controls.Add(button2);
-            Controls.Add(textBox1);
+            Controls.Add(Patient_Search_TxtBox);
             Controls.Add(button1);
             Controls.Add(pictureBox3);
             Controls.Add(pictureBox1);
             Controls.Add(logoname);
-            Name = "Patient";
+            Name = "PatientWindow";
             Text = "Patient";
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)Patient_DGV).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -205,9 +209,9 @@
         private Button button1;
         private PictureBox pictureBox3;
         private PictureBox pictureBox1;
-        private TextBox textBox1;
+        private TextBox Patient_Search_TxtBox;
         private Button button2;
-        private DataGridView dataGridView1;
+        private DataGridView Patient_DGV;
         private Button button3;
         private Button button4;
         private Button button5;

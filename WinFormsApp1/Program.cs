@@ -15,6 +15,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace WinFormsApp1
 {
+
     internal static class Program
     {
         /// <summary>
@@ -47,7 +48,7 @@ namespace WinFormsApp1
             #endregion
 
         }
-        private  static void ConfigureServices(ServiceCollection services)
+        private static void ConfigureServices(ServiceCollection services)
         {
             services.AddDbContext<ClinicDbContext>(options =>
             options.UseSqlServer("server=.;database=Clinic;Trusted_connection=True;TrustServerCertificate=True;"));
@@ -80,16 +81,16 @@ namespace WinFormsApp1
             services.AddScoped<IReceptionistService, ReceptionistService>();
             services.AddScoped<IScheduleRepository, ScheduleRepository>();
             services.AddScoped<IAuthService, AuthService>();
+            services.AddScoped<IExcelSheetService, ExcelSheetService>();
             #endregion
 
             #region Register Forms
             services.AddScoped<UpdatePatient>();
+            services.AddScoped<PatientWindow>();
+            services.AddScoped<AddPatient>();
             services.AddScoped<login>();
             #endregion
 
-
-
-            services.AddScoped<login>();
             //services.AddScoped<MainForm>();
         }
         private static async Task SeedAdminUser(IServiceProvider serviceProvider)

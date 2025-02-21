@@ -1,5 +1,4 @@
 ﻿using Clinic.BLL.Repository.Abstract;
-using Clinic.DAL.Entities;
 using Clinic.DAL.Enums;
 
 namespace WinFormsApp1
@@ -9,7 +8,7 @@ namespace WinFormsApp1
         private readonly IPatientService _patientService;
         private int PatientId;
 
-        public UpdatePatient(IPatientService patientService,int PatientId)
+        public UpdatePatient(IPatientService patientService, int PatientId)
         {
             InitializeComponent();
             _patientService = patientService;
@@ -75,7 +74,7 @@ namespace WinFormsApp1
                 // Create updated patient object
                 var updatedPatient = new Clinic.DAL.Entities.Patient
                 {
-                    Id = PatientId, 
+                    Id = PatientId,
                     Name = name.Text,
                     Age = ageValue,
                     Phone = phone.Text,
@@ -88,7 +87,7 @@ namespace WinFormsApp1
                 if (isUpdated)
                 {
                     MessageBox.Show("Patient updated successfully.");
-                    this.Close(); 
+                    this.Close();
                 }
                 else
                 {
@@ -102,6 +101,7 @@ namespace WinFormsApp1
         }
         private async void button1_Click(object sender, EventArgs e)
         {
+
             //    var patient = new Patient
             //    {
             //        Name = UpdatePatient_Name.Text,
@@ -122,13 +122,13 @@ namespace WinFormsApp1
 
         }
 
-       
+
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
 
         }
 
-        
+
     }
 }

@@ -52,6 +52,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.Smile__4_;
+
             pictureBox1.Location = new Point(79, 1);
             pictureBox1.Margin = new Padding(3, 2, 3, 2);
             pictureBox1.Name = "pictureBox1";
@@ -64,6 +65,7 @@
             pictureBox3.BackColor = Color.White;
             pictureBox3.BackgroundImageLayout = ImageLayout.Center;
             pictureBox3.BorderStyle = BorderStyle.FixedSingle;
+
             pictureBox3.Location = new Point(79, 76);
             pictureBox3.Margin = new Padding(3, 2, 3, 2);
             pictureBox3.Name = "pictureBox3";
@@ -76,6 +78,7 @@
             panel1.BackColor = Color.White;
             panel1.BorderStyle = BorderStyle.FixedSingle;
             panel1.Controls.Add(pictureBox4);
+
             panel1.Controls.Add(UserName);
             panel1.Location = new Point(114, 271);
             panel1.Margin = new Padding(3, 2, 3, 2);
@@ -88,6 +91,7 @@
             // 
             pictureBox4.BackColor = Color.White;
             pictureBox4.Image = Properties.Resources.تصميم_بدون_عنوان__3_1;
+
             pictureBox4.Location = new Point(-1, 12);
             pictureBox4.Margin = new Padding(3, 2, 3, 2);
             pictureBox4.Name = "pictureBox4";
@@ -97,6 +101,7 @@
             // 
             // UserName
             // 
+
             UserName.Location = new Point(70, 24);
             UserName.Name = "UserName";
             UserName.Size = new Size(312, 23);
@@ -108,6 +113,7 @@
             panel2.BackColor = Color.White;
             panel2.BorderStyle = BorderStyle.FixedSingle;
             panel2.Controls.Add(pictureBox5);
+
             panel2.Controls.Add(Password);
             panel2.Location = new Point(114, 402);
             panel2.Name = "panel2";
@@ -118,6 +124,7 @@
             // 
             pictureBox5.BackColor = Color.White;
             pictureBox5.Image = Properties.Resources.تصميم_بدون_عنوان__2_;
+
             pictureBox5.Location = new Point(4, 5);
             pictureBox5.Margin = new Padding(3, 2, 3, 2);
             pictureBox5.Name = "pictureBox5";
@@ -127,6 +134,7 @@
             // 
             // Password
             // 
+
             Password.Location = new Point(70, 20);
             Password.Name = "Password";
             Password.Size = new Size(312, 23);
@@ -137,6 +145,7 @@
             // 
             pictureBox2.BackColor = Color.White;
             pictureBox2.Image = Properties.Resources.تصميم_بدون_عنوان__1_;
+
             pictureBox2.Location = new Point(79, 76);
             pictureBox2.Margin = new Padding(3, 2, 3, 2);
             pictureBox2.Name = "pictureBox2";
@@ -151,6 +160,7 @@
             label1.BackColor = Color.White;
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = SystemColors.ControlDarkDark;
+
             label1.Location = new Point(260, 258);
             label1.Name = "label1";
             label1.Size = new Size(94, 21);
@@ -164,6 +174,7 @@
             label3.BackColor = Color.White;
             label3.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = SystemColors.ControlDarkDark;
+
             label3.Location = new Point(260, 387);
             label3.Name = "label3";
             label3.Size = new Size(82, 21);

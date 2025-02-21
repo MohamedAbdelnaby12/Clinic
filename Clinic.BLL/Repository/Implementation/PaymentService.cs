@@ -32,7 +32,7 @@ namespace Clinic.BLL.Repository.Implementation
         {
             var payment = await _paymentRepository.GetByIdAsync(id);
             if (payment != null)
-                await _paymentRepository.DeleteAsync(payment);
+                await _paymentRepository.DeleteAsync(id);
         }
 
         public Task UpdatePaymentAsync(Payment payment)

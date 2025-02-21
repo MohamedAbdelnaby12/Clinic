@@ -7,6 +7,6 @@ namespace Clinic.BLL.Repository.Abstract
         Task<List<Appointment>> GetAllAsync();
         Task<Appointment> AddAsync(Appointment appointment);
         Task UpdateAsync(Appointment appointment);
-        Task DeleteAsync(Appointment appointment);
+        Task DeleteAsync(int Id);
     }
 }
