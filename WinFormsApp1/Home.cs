@@ -7,7 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Clinic.BLL.Repository.Implementation;
+using Clinic.DAL.Repository.Implementation;
+using Clinic.DAL;
 using static System.Windows.Forms.DataFormats;
+using Microsoft.Extensions.DependencyInjection;
+using Clinic.BLL.Repository.Abstract;
 
 namespace WinFormsApp1
 {
@@ -25,8 +30,10 @@ namespace WinFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Doctor doctor = new Doctor();
-            doctor.Show();
+            var Service = Program.ServiceProvider.GetRequiredService<IDoctorService>();
+            var doctorWindow = new Doctor(Service);
+            doctorWindow.Show();
+
             //this.Hide();
         }
 

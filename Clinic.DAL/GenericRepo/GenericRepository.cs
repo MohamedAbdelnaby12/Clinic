@@ -1,9 +1,13 @@
-﻿using Clinic.DAL.GenericRepository;
+﻿using System.Linq.Expressions;
+using System.Xml;
+using Clinic.DAL.Entities;
+using Clinic.DAL.GenericRepository;
+using Clinic.DAL.Repository.Abstract;
 using Microsoft.EntityFrameworkCore;
 
 namespace Clinic.DAL.GenericRepo
 {
-    public class GenericRepository<T> : IGenericRepository<T> where T : class
+    public class GenericRepository<T> : IGenericRepository<T> where T : class 
     {
         private readonly ClinicDbContext _clinicDb;
         private DbSet<T> _entity;
@@ -16,7 +20,7 @@ namespace Clinic.DAL.GenericRepo
         public async Task<T> AddAsync(T entity)
         {
             await _entity.AddAsync(entity);
-            _clinicDb.SaveChangesAsync();
+            await _clinicDb.SaveChangesAsync();
             return entity;
         }
 
@@ -31,6 +35,13 @@ namespace Clinic.DAL.GenericRepo
             return await _entity.ToListAsync();
         }
 
+      
+
+        public async Task<T> GetAsync(Expression<Func<T, bool>> predicate)
+        {
+            return await _entity.FirstOrDefaultAsync(predicate);
+        }
+
         public async Task<T> GetByIdAsync(int Id)
         {
             return await _entity.FindAsync(Id);
@@ -41,5 +52,6 @@ namespace Clinic.DAL.GenericRepo
             _entity.Update(entity);
             await _clinicDb.SaveChangesAsync();
         }
+        
     }
 }

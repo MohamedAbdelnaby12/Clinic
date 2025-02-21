@@ -40,5 +40,10 @@ namespace WinFormsApp1
             updatePatient.Show();
             //this.Hide();
         }
+
+        private void Patient_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

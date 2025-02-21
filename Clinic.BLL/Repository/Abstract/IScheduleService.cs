@@ -6,6 +6,8 @@ namespace Clinic.BLL.Repository.Abstract
     {
         Task<List<Schedule>> GetAllAsync();
         Task<Schedule> AddAsync(Schedule schedule);
+        Task<Schedule> GetByIdAsync(int id);
+
         Task UpdateAsync(Schedule schedule);
         Task DeleteAsync(Schedule schedule);
     }

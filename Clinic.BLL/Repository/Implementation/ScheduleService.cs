@@ -26,6 +26,11 @@ namespace Clinic.BLL.Repository.Implementation
             return await _scheduleRepository.GetAllAsync();
         }
 
+        public async Task<Schedule> GetByIdAsync(int id)
+        {
+            return await _scheduleRepository.GetByIdAsync(id);
+        }
+
         public Task UpdateAsync(Schedule schedule)
         {
             return _scheduleRepository.UpdateAsync(schedule);
