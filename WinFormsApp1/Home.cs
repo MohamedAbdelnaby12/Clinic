@@ -1,4 +1,5 @@
 ﻿using Clinic.BLL.Repository.Abstract;
+using Clinic.BLL.Services.Abstract;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,16 +16,23 @@ namespace WinFormsApp1
     public partial class Home : Form
     {
         private readonly IPatientService _patientService;
+        private bool isAdmin;
+        private readonly IReceptionistService _receptionistService;
+        private readonly IAuthService _authService;
 
-        public Home(IPatientService patientService)
+        public Home(IPatientService patientService, bool isAdmin,IReceptionistService receptionistService,IAuthService authService)
         {
             InitializeComponent();
             _patientService = patientService;
+            this.isAdmin = isAdmin;
+            _receptionistService = receptionistService;
+            _authService = authService;
         }
 
         private void Home_Load(object sender, EventArgs e)
         {
-
+            if (!isAdmin)
+                addUser.Hide();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -46,6 +54,12 @@ namespace WinFormsApp1
             Report report = new Report();
             report.Show();
             //this.Hide();
+        }
+
+        private void addUser_Click(object sender, EventArgs e)
+        {
+            AddUser addUser = new AddUser(_receptionistService ,_authService);
+            addUser.Show();
         }
     }
 }
