@@ -1,17 +1,6 @@
 ﻿using Clinic.BLL.Repository.Abstract;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Clinic.BLL.Repository.Abstract;
 using Clinic.BLL.Services.Abstract;
 using Clinic.DAL.Entities;
-using Microsoft.Extensions.DependencyInjection;
 
 namespace WinFormsApp1
 {
@@ -68,16 +57,16 @@ namespace WinFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var patient = Program.ServiceProvider.GetRequiredService<AddPatient>();
-            patient.Show();
-            //AddPatient addPatient = new AddPatient();
-            //addPatient.Show();
+            //var patient = Program.ServiceProvider.GetRequiredService<AddPatient>();
+            //patient.Show();
+            AddPatient addPatient = new AddPatient(_patientService);
+            addPatient.Show();
             //this.Hide();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            UpdatePatient updatePatient = new UpdatePatient(_patientService,2);
+            UpdatePatient updatePatient = new UpdatePatient(_patientService, 2);
             updatePatient.Show();
             //this.Hide();
         }

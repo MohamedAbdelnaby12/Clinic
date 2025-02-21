@@ -1,6 +1,5 @@
 ﻿using Clinic.BLL.Repository.Abstract;
 using Clinic.BLL.Services.Abstract;
-using Microsoft.Extensions.DependencyInjection;
 
 namespace WinFormsApp1
 {
@@ -10,14 +9,16 @@ namespace WinFormsApp1
         private bool isAdmin;
         private readonly IReceptionistService _receptionistService;
         private readonly IAuthService _authService;
+        private readonly IExcelSheetService _excelSheetService;
 
-        public Home(IPatientService patientService, bool isAdmin, IReceptionistService receptionistService, IAuthService authService)
+        public Home(IPatientService patientService, bool isAdmin, IReceptionistService receptionistService, IAuthService authService, IExcelSheetService excelSheetService)
         {
             InitializeComponent();
             _patientService = patientService;
             this.isAdmin = isAdmin;
             _receptionistService = receptionistService;
             _authService = authService;
+            _excelSheetService = excelSheetService;
         }
 
         private void Home_Load(object sender, EventArgs e)
@@ -35,13 +36,14 @@ namespace WinFormsApp1
 
         private void button2_Click(object sender, EventArgs e)
         {
-            var patient = Program.ServiceProvider.GetRequiredService<PatientWindow>();
-            patient.Show();
+
+            //var patient = Program.ServiceProvider.GetRequiredService<PatientWindow>();
+            //patient.Show();
             //Patient Patient = new Patient();
             //Patient.Show();
             ////this.Hide();
-            //PatientWindow Patient = new PatientWindow(_patientService);
-            //Patient.Show();
+            PatientWindow Patient = new PatientWindow(_patientService, _excelSheetService);
+            Patient.Show();
             //this.Hide();
         }
 
