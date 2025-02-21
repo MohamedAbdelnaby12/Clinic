@@ -8,8 +8,7 @@ namespace Clinic.DAL.GenericRepository
         Task<List<T>> GetAllAsync();
         Task<T> AddAsync(T entity);
         Task UpdateAsync(T entity);
-        Task DeleteAsync(int Id);
-        //added
+        Task DeleteAsync(int Id);       
         Task<T> GetByIdAsync(int Id);
         Task<T> GetAsync(Expression<Func<T, bool>> predicate);
 

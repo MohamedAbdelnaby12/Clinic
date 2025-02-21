@@ -87,7 +87,7 @@ namespace WinFormsApp1
                 return;
             }
 
-            await _doctorService.DeleteAsync(selectedDoctor);
+            await _doctorService.DeleteAsync(selectedDoctor.Id);
             MessageBox.Show("Doctor deleted successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             await LoadDoctors();

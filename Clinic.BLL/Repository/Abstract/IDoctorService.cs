@@ -7,12 +7,12 @@ namespace Clinic.BLL.Repository.Abstract
         Task<List<Doctor>> GetAllAsync();
         Task<Doctor> AddAsync(Doctor doctor);
         Task<bool> UpdateAsync(Doctor doctor);
-        Task DeleteAsync(Doctor doctor);
+        Task DeleteAsync(int id);
+
+
         Task<Doctor> GetDoctortById(int id);
         Task<Doctor> GetByScheduleIdAsync(int scheduleId);
 
 
-        Task UpdateAsync(Doctor doctor);
-        Task DeleteAsync(int Id);
     }
 }
