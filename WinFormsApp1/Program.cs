@@ -82,15 +82,26 @@ namespace WinFormsApp1
             services.AddScoped<IScheduleRepository, ScheduleRepository>();
             services.AddScoped<IAuthService, AuthService>();
             services.AddScoped<IExcelSheetService, ExcelSheetService>();
+            services.AddScoped<IScheduleService, ScheduleService>();
+           
+
             #endregion
 
             #region Register Forms
             services.AddScoped<UpdatePatient>();
+            services.AddScoped<Doctor>();
+            services.AddScoped<AddDoctor>();
+            services.AddScoped<Home>();
             services.AddScoped<PatientWindow>();
             services.AddScoped<AddPatient>();
             services.AddScoped<login>();
+            services.AddScoped<Schedule>();
+            services.AddScoped<UpdateDoctor>();
             #endregion
 
+
+
+            services.AddScoped<login>();
             //services.AddScoped<MainForm>();
         }
         private static async Task SeedAdminUser(IServiceProvider serviceProvider)
