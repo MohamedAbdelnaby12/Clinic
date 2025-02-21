@@ -8,13 +8,15 @@ namespace WinFormsApp1
         private readonly IAuthService _authService;
         private readonly IPatientService _patientService;
         private readonly IReceptionistService _receptionistService;
+        private readonly IExcelSheetService _excelSheetService;
 
-        public login(IAuthService authService,IPatientService patientService,IReceptionistService receptionistService)
+        public login(IAuthService authService, IPatientService patientService, IReceptionistService receptionistService, IExcelSheetService excelSheetService)
         {
             InitializeComponent();
             _authService = authService;
             _patientService = patientService;
             _receptionistService = receptionistService;
+            _excelSheetService = excelSheetService;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -47,13 +49,13 @@ namespace WinFormsApp1
 
 
             // Check if user is admin
-            bool isAdmin =await _authService.CheckAdminRole(username);
+            bool isAdmin = await _authService.CheckAdminRole(username);
 
             if (isAuthenticated)
             {
                 MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                
-                Home homeForm = new Home(_patientService,isAdmin,_receptionistService,_authService);
+
+                Home homeForm = new Home(_patientService, isAdmin, _receptionistService, _authService, _excelSheetService);
                 homeForm.Show();
                 this.Hide();
             }
