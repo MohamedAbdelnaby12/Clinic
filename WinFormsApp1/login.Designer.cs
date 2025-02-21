@@ -56,7 +56,7 @@
             pictureBox1.Location = new Point(79, 1);
             pictureBox1.Margin = new Padding(3, 2, 3, 2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(456, 71);
+            pictureBox1.Size = new Size(521, 95);
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
             // 
@@ -69,7 +69,7 @@
             pictureBox3.Location = new Point(79, 76);
             pictureBox3.Margin = new Padding(3, 2, 3, 2);
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(459, 495);
+            pictureBox3.Size = new Size(524, 659);
             pictureBox3.TabIndex = 24;
             pictureBox3.TabStop = false;
             // 
@@ -80,10 +80,9 @@
             panel1.Controls.Add(pictureBox4);
 
             panel1.Controls.Add(UserName);
-            panel1.Location = new Point(114, 271);
-            panel1.Margin = new Padding(3, 2, 3, 2);
+            panel1.Location = new Point(130, 361);
             panel1.Name = "panel1";
-            panel1.Size = new Size(387, 64);
+            panel1.Size = new Size(442, 85);
             panel1.TabIndex = 25;
             panel1.Paint += panel1_Paint;
             // 
@@ -95,7 +94,7 @@
             pictureBox4.Location = new Point(-1, 12);
             pictureBox4.Margin = new Padding(3, 2, 3, 2);
             pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(66, 51);
+            pictureBox4.Size = new Size(75, 68);
             pictureBox4.TabIndex = 29;
             pictureBox4.TabStop = false;
             // 
@@ -104,8 +103,9 @@
 
             UserName.Location = new Point(70, 24);
             UserName.Name = "UserName";
-            UserName.Size = new Size(312, 23);
+            UserName.Size = new Size(356, 27);
             UserName.TabIndex = 0;
+            UserName.Text = "d";
             UserName.TextChanged += textBox1_TextChanged;
             // 
             // panel2
@@ -115,9 +115,10 @@
             panel2.Controls.Add(pictureBox5);
 
             panel2.Controls.Add(Password);
-            panel2.Location = new Point(114, 402);
+            panel2.Location = new Point(130, 536);
+            panel2.Margin = new Padding(3, 4, 3, 4);
             panel2.Name = "panel2";
-            panel2.Size = new Size(387, 61);
+            panel2.Size = new Size(442, 81);
             panel2.TabIndex = 26;
             // 
             // pictureBox5
@@ -128,7 +129,7 @@
             pictureBox5.Location = new Point(4, 5);
             pictureBox5.Margin = new Padding(3, 2, 3, 2);
             pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new Size(61, 55);
+            pictureBox5.Size = new Size(70, 73);
             pictureBox5.TabIndex = 30;
             pictureBox5.TabStop = false;
             // 
@@ -137,7 +138,7 @@
 
             Password.Location = new Point(70, 20);
             Password.Name = "Password";
-            Password.Size = new Size(312, 23);
+            Password.Size = new Size(356, 27);
             Password.TabIndex = 0;
             Password.TextChanged += Password_TextChanged;
             // 
@@ -149,7 +150,7 @@
             pictureBox2.Location = new Point(79, 76);
             pictureBox2.Margin = new Padding(3, 2, 3, 2);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(459, 165);
+            pictureBox2.Size = new Size(525, 220);
             pictureBox2.TabIndex = 1;
             pictureBox2.TabStop = false;
             pictureBox2.Click += pictureBox2_Click;
@@ -163,7 +164,7 @@
 
             label1.Location = new Point(260, 258);
             label1.Name = "label1";
-            label1.Size = new Size(94, 21);
+            label1.Size = new Size(116, 28);
             label1.TabIndex = 27;
             label1.Text = "User Name";
             label1.Click += label1_Click;
@@ -177,7 +178,7 @@
 
             label3.Location = new Point(260, 387);
             label3.Name = "label3";
-            label3.Size = new Size(82, 21);
+            label3.Size = new Size(101, 28);
             label3.TabIndex = 29;
             label3.Text = "Password";
             label3.Click += label3_Click;
@@ -187,10 +188,9 @@
             button1.BackColor = Color.FromArgb(32, 59, 73);
             button1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button1.ForeColor = SystemColors.ButtonHighlight;
-            button1.Location = new Point(228, 484);
-            button1.Margin = new Padding(3, 2, 3, 2);
+            button1.Location = new Point(261, 645);
             button1.Name = "button1";
-            button1.Size = new Size(158, 38);
+            button1.Size = new Size(181, 51);
             button1.TabIndex = 34;
             button1.Text = "Login";
             button1.UseVisualStyleBackColor = false;
@@ -198,10 +198,10 @@
             // 
             // login
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(32, 59, 73);
-            ClientSize = new Size(610, 562);
+            ClientSize = new Size(697, 749);
             Controls.Add(button1);
             Controls.Add(label3);
             Controls.Add(label1);
@@ -210,7 +210,6 @@
             Controls.Add(panel1);
             Controls.Add(pictureBox3);
             Controls.Add(pictureBox1);
-            Margin = new Padding(3, 2, 3, 2);
             Name = "login";
             Text = "login";
             Load += login_Load;
