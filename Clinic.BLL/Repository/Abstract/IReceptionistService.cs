@@ -9,5 +9,6 @@ namespace Clinic.BLL.Repository.Abstract
         Task AddReceptionistAsync(Receptionist receptionist);
         Task UpdateReceptionistAsync(Receptionist receptionist);
         Task DeleteReceptionistAsync(int id);
+        Task<bool> AddReceptionistAndUserAsync(string name, string phone, string email, string password);
     }
 }
