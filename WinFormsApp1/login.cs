@@ -1,4 +1,5 @@
-﻿using Clinic.BLL.Services.Abstract;
+﻿using Clinic.BLL.Repository.Abstract;
+using Clinic.BLL.Services.Abstract;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,11 +15,13 @@ namespace WinFormsApp1
     public partial class login : Form
     {
         private readonly IAuthService _authService;
+        private readonly IPatientService _patientService;
 
-        public login(IAuthService authService)
+        public login(IAuthService authService,IPatientService patientService)
         {
             InitializeComponent();
             _authService = authService;
+            _patientService = patientService;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -52,7 +55,7 @@ namespace WinFormsApp1
             if (isAuthenticated)
             {
                 MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Home homeForm = new Home();
+                Home homeForm = new Home(_patientService);
                 homeForm.Show();
                 this.Hide();
             }
