@@ -1,10 +1,16 @@
-﻿namespace WinFormsApp1
+
+using Clinic.BLL.Services.Abstract;
+
+namespace WinFormsApp1
 {
     public partial class login : Form
     {
-        public login()
+        private readonly IAuthService _authService;
+
+        public login(IAuthService authService)
         {
             InitializeComponent();
+            _authService = authService;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -22,11 +28,50 @@
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private async void button1_Click(object sender, EventArgs e)
         {
-            Home homeForm = new Home();
-            homeForm.Show();
-            this.Hide();
+            string username = UserName.Text;
+            string password = Password.Text;
+
+            if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password))
+            {
+                MessageBox.Show("Please enter username and password.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            bool isAuthenticated = await _authService.LoginUser(username, password);
+
+            if (isAuthenticated)
+            {
+                MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Home homeForm = new Home();
+                homeForm.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Invalid username or password.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void login_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Password_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

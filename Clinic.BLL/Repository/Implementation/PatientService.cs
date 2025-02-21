@@ -16,9 +16,9 @@ namespace Clinic.BLL.Repository.Implementation
             return await _patientRepository.AddAsync(patient);
         }
 
-        public async Task DeleteAsync(Patient patient)
+        public async Task DeleteAsync(int id)
         {
-            await _patientRepository.DeleteAsync(patient);
+            await _patientRepository.DeleteAsync(id);
         }
 
         public async Task<List<Patient>> GetAllAsync()
@@ -29,6 +29,11 @@ namespace Clinic.BLL.Repository.Implementation
         public async Task<Patient> GetPatientById(int id)
         {
             return await _patientRepository.GetByIdAsync(id);
+        }
+
+        public async Task<List<Patient>> GetPatientByName(string name)
+        {
+            return await _patientRepository.GetPatientsByNameAsync(name);
         }
 
         public async Task<bool> UpdateAsync(Patient patient)

@@ -16,9 +16,9 @@ namespace Clinic.BLL.Repository.Implementation
             return await _doctorRepository.AddAsync(doctor);
         }
 
-        public Task DeleteAsync(Doctor doctor)
+        public Task DeleteAsync(int Id)
         {
-            return _doctorRepository.DeleteAsync(doctor);
+            return _doctorRepository.DeleteAsync(Id);
         }
 
         public async Task<List<Doctor>> GetAllAsync()

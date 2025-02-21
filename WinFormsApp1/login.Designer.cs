@@ -32,10 +32,10 @@
             pictureBox3 = new PictureBox();
             panel1 = new Panel();
             pictureBox4 = new PictureBox();
-            textBox1 = new TextBox();
+            UserName = new TextBox();
             panel2 = new Panel();
             pictureBox5 = new PictureBox();
-            textBox2 = new TextBox();
+            Password = new TextBox();
             pictureBox2 = new PictureBox();
             label1 = new Label();
             label3 = new Label();
@@ -52,7 +52,8 @@
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.Smile__4_;
-            pictureBox1.Location = new Point(74, 9);
+
+            pictureBox1.Location = new Point(79, 1);
             pictureBox1.Margin = new Padding(3, 2, 3, 2);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(456, 71);
@@ -64,7 +65,8 @@
             pictureBox3.BackColor = Color.White;
             pictureBox3.BackgroundImageLayout = ImageLayout.Center;
             pictureBox3.BorderStyle = BorderStyle.FixedSingle;
-            pictureBox3.Location = new Point(86, 104);
+
+            pictureBox3.Location = new Point(79, 76);
             pictureBox3.Margin = new Padding(3, 2, 3, 2);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(459, 495);
@@ -76,8 +78,9 @@
             panel1.BackColor = Color.White;
             panel1.BorderStyle = BorderStyle.FixedSingle;
             panel1.Controls.Add(pictureBox4);
-            panel1.Controls.Add(textBox1);
-            panel1.Location = new Point(115, 276);
+
+            panel1.Controls.Add(UserName);
+            panel1.Location = new Point(114, 271);
             panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
             panel1.Size = new Size(387, 64);
@@ -88,63 +91,68 @@
             // 
             pictureBox4.BackColor = Color.White;
             pictureBox4.Image = Properties.Resources.تصميم_بدون_عنوان__3_1;
-            pictureBox4.Location = new Point(5, 9);
+
+            pictureBox4.Location = new Point(-1, 12);
             pictureBox4.Margin = new Padding(3, 2, 3, 2);
             pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(66, 30);
+            pictureBox4.Size = new Size(66, 51);
             pictureBox4.TabIndex = 29;
             pictureBox4.TabStop = false;
             // 
-            // textBox1
+            // UserName
             // 
-            textBox1.Location = new Point(76, 19);
-            textBox1.Margin = new Padding(3, 2, 3, 2);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(295, 23);
-            textBox1.TabIndex = 0;
-            textBox1.TextChanged += textBox1_TextChanged;
+
+            UserName.Location = new Point(70, 24);
+            UserName.Name = "UserName";
+            UserName.Size = new Size(312, 23);
+            UserName.TabIndex = 0;
+            UserName.TextChanged += textBox1_TextChanged;
             // 
             // panel2
             // 
             panel2.BackColor = Color.White;
             panel2.BorderStyle = BorderStyle.FixedSingle;
             panel2.Controls.Add(pictureBox5);
-            panel2.Controls.Add(textBox2);
-            panel2.Location = new Point(115, 386);
-            panel2.Margin = new Padding(3, 2, 3, 2);
+
+            panel2.Controls.Add(Password);
+            panel2.Location = new Point(114, 402);
             panel2.Name = "panel2";
-            panel2.Size = new Size(387, 53);
+            panel2.Size = new Size(387, 61);
             panel2.TabIndex = 26;
             // 
             // pictureBox5
             // 
             pictureBox5.BackColor = Color.White;
             pictureBox5.Image = Properties.Resources.تصميم_بدون_عنوان__2_;
-            pictureBox5.Location = new Point(12, 7);
+
+            pictureBox5.Location = new Point(4, 5);
             pictureBox5.Margin = new Padding(3, 2, 3, 2);
             pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new Size(53, 34);
+            pictureBox5.Size = new Size(61, 55);
             pictureBox5.TabIndex = 30;
             pictureBox5.TabStop = false;
             // 
-            // textBox2
+            // Password
             // 
-            textBox2.Location = new Point(90, 16);
-            textBox2.Margin = new Padding(3, 2, 3, 2);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(274, 23);
-            textBox2.TabIndex = 0;
+
+            Password.Location = new Point(70, 20);
+            Password.Name = "Password";
+            Password.Size = new Size(312, 23);
+            Password.TabIndex = 0;
+            Password.TextChanged += Password_TextChanged;
             // 
             // pictureBox2
             // 
             pictureBox2.BackColor = Color.White;
             pictureBox2.Image = Properties.Resources.تصميم_بدون_عنوان__1_;
-            pictureBox2.Location = new Point(87, 104);
+
+            pictureBox2.Location = new Point(79, 76);
             pictureBox2.Margin = new Padding(3, 2, 3, 2);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(458, 154);
+            pictureBox2.Size = new Size(459, 165);
             pictureBox2.TabIndex = 1;
             pictureBox2.TabStop = false;
+            pictureBox2.Click += pictureBox2_Click;
             // 
             // label1
             // 
@@ -152,7 +160,8 @@
             label1.BackColor = Color.White;
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = SystemColors.ControlDarkDark;
-            label1.Location = new Point(128, 260);
+
+            label1.Location = new Point(260, 258);
             label1.Name = "label1";
             label1.Size = new Size(94, 21);
             label1.TabIndex = 27;
@@ -165,11 +174,13 @@
             label3.BackColor = Color.White;
             label3.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = SystemColors.ControlDarkDark;
-            label3.Location = new Point(128, 370);
+
+            label3.Location = new Point(260, 387);
             label3.Name = "label3";
             label3.Size = new Size(82, 21);
             label3.TabIndex = 29;
             label3.Text = "Password";
+            label3.Click += label3_Click;
             // 
             // button1
             // 
@@ -202,6 +213,7 @@
             Margin = new Padding(3, 2, 3, 2);
             Name = "login";
             Text = "login";
+            Load += login_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             panel1.ResumeLayout(false);
@@ -220,14 +232,15 @@
         private PictureBox pictureBox1;
         private PictureBox pictureBox3;
         private Panel panel1;
-        private TextBox textBox1;
+        private TextBox UserName;
         private Panel panel2;
-        private TextBox textBox2;
+        private TextBox Password;
         private PictureBox pictureBox2;
         private Label label1;
         private PictureBox pictureBox4;
         private PictureBox pictureBox5;
         private Label label3;
         private Button button1;
+        private Control textBox1;
     }
 }

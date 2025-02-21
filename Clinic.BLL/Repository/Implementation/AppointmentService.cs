@@ -16,9 +16,9 @@ namespace Clinic.BLL.Repository.Implementation
             return await _appointmentRepository.AddAsync(appointment);
         }
 
-        public Task DeleteAsync(Appointment appointment)
+        public Task DeleteAsync(int Id)
         {
-            return _appointmentRepository.DeleteAsync(appointment);
+            return _appointmentRepository.DeleteAsync(Id);
         }
 
         public async Task<List<Appointment>> GetAllAsync()

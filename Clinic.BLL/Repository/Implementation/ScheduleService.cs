@@ -16,9 +16,9 @@ namespace Clinic.BLL.Repository.Implementation
             return await _scheduleRepository.AddAsync(schedule);
         }
 
-        public Task DeleteAsync(Schedule schedule)
+        public Task DeleteAsync(int Id)
         {
-            return _scheduleRepository.DeleteAsync(schedule);
+            return _scheduleRepository.DeleteAsync(Id);
         }
 
         public async Task<List<Schedule>> GetAllAsync()

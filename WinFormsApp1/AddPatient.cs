@@ -1,7 +1,18 @@
+using Clinic.BLL.Repository.Abstract;
+using Clinic.DAL.Entities;
+using Clinic.DAL.Enums;
+
 namespace WinFormsApp1
 {
     public partial class AddPatient : Form
     {
+        private readonly IPatientService _patientService;
+
+        public AddPatient(IPatientService patientService)
+        {
+            InitializeComponent();
+            _patientService = patientService;
+        }
         public AddPatient()
         {
             InitializeComponent();
@@ -34,7 +45,15 @@ namespace WinFormsApp1
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            var genderList = Enum.GetValues(typeof(Gender))
+                        .Cast<Gender>()
+                        .Select(g => new { Name = g.ToString(), Value = (int)g })
+                        .ToList();
 
+            AddPatient_Gender.DataSource = genderList;
+            AddPatient_Gender.DisplayMember = "Name";
+            AddPatient_Gender.ValueMember = "Value";
+            //AddPatient_Gender.DataSource = Enum.GetValues(typeof(Gender));
         }
 
         private void label1_Click_3(object sender, EventArgs e)
@@ -112,9 +131,28 @@ namespace WinFormsApp1
 
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        private async void button1_Click_1(object sender, EventArgs e)
         {
-        
+            var patient = new Patient
+            {
+                Name = AddPatient_Name.Text,
+                Age = int.Parse(AddPatient_Age.Text),
+                Phone = AddPatient_Phone.Text,
+                Email = AddPatient_Email.Text,
+                Gender = (Gender)Enum.Parse(typeof(Gender), AddPatient_Gender.Text)
+            };
+            await _patientService.AddAsync(patient);
+            MessageBox.Show("Added Successfully");
+            AddPatient_Name.Clear();
+            AddPatient_Age.Clear();
+            AddPatient_Phone.Clear();
+            AddPatient_Email.Clear();
         }
+
+        private void AddPatient_Gender_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            AddPatient_Gender.DataSource = Enum.GetValues(typeof(Gender));
+        }
+
     }
 }

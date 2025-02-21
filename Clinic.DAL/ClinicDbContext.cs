@@ -11,6 +11,11 @@ namespace Clinic.DAL
         {
         }
 
+        public ClinicDbContext()
+        {
+            
+        }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer("server=.;database=Clinic;Trusted_connection=True;TrustServerCertificate=True;");
