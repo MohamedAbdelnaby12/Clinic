@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Clinic.BLL.Repository.Abstract;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,9 +14,12 @@ namespace WinFormsApp1
 {
     public partial class Home : Form
     {
-        public Home()
+        private readonly IPatientService _patientService;
+
+        public Home(IPatientService patientService)
         {
             InitializeComponent();
+            _patientService = patientService;
         }
 
         private void Home_Load(object sender, EventArgs e)
@@ -32,7 +36,7 @@ namespace WinFormsApp1
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Patient Patient = new Patient();
+            Patient Patient = new Patient(_patientService);
             Patient.Show();
             //this.Hide();
         }
