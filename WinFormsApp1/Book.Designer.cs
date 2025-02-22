@@ -32,13 +32,12 @@ namespace WinFormsApp1
             pictureBox1 = new PictureBox();
             label1 = new Label();
             panel1 = new Panel();
+            paymentmethod = new ComboBox();
             dataGridView1 = new DataGridView();
-            comboBox2 = new ComboBox();
-            checkBox1 = new CheckBox();
-            label2 = new Label();
             button2 = new Button();
             button1 = new Button();
-            comboBox1 = new ComboBox();
+            comboBoxDoctors = new ComboBox();
+            Doctor = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -59,7 +58,7 @@ namespace WinFormsApp1
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = SystemColors.ControlDarkDark;
-            label1.Location = new Point(51, 47);
+            label1.Location = new Point(69, 457);
             label1.Name = "label1";
             label1.Size = new Size(83, 28);
             label1.TabIndex = 1;
@@ -69,71 +68,48 @@ namespace WinFormsApp1
             // panel1
             // 
             panel1.BackColor = Color.White;
+            panel1.Controls.Add(Doctor);
+            panel1.Controls.Add(paymentmethod);
             panel1.Controls.Add(dataGridView1);
-            panel1.Controls.Add(comboBox2);
-            panel1.Controls.Add(checkBox1);
-            panel1.Controls.Add(label2);
             panel1.Controls.Add(button2);
             panel1.Controls.Add(button1);
-            panel1.Controls.Add(comboBox1);
+            panel1.Controls.Add(comboBoxDoctors);
             panel1.Controls.Add(label1);
             panel1.Location = new Point(83, 101);
             panel1.Name = "panel1";
             panel1.Size = new Size(539, 659);
             panel1.TabIndex = 2;
             // 
+            // paymentmethod
+            // 
+            paymentmethod.FormattingEnabled = true;
+            paymentmethod.Location = new Point(319, 519);
+            paymentmethod.Name = "paymentmethod";
+            paymentmethod.Size = new Size(151, 28);
+            paymentmethod.TabIndex = 40;
+            // 
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(51, 228);
+            dataGridView1.Location = new Point(51, 44);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(439, 251);
+            dataGridView1.Size = new Size(439, 354);
             dataGridView1.TabIndex = 39;
-            // 
-            // comboBox2
-            // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(339, 143);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(151, 28);
-            comboBox2.TabIndex = 38;
-            comboBox2.SelectedIndexChanged += comboBox2_SelectedIndexChanged;
-            // 
-            // checkBox1
-            // 
-            checkBox1.AutoSize = true;
-            checkBox1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            checkBox1.ForeColor = SystemColors.ControlDarkDark;
-            checkBox1.Location = new Point(195, 517);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(134, 32);
-            checkBox1.TabIndex = 37;
-            checkBox1.Text = "Payement ";
-            checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.ForeColor = SystemColors.ControlDarkDark;
-            label2.Location = new Point(51, 143);
-            label2.Name = "label2";
-            label2.Size = new Size(137, 28);
-            label2.TabIndex = 36;
-            label2.Text = "Appointment";
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // button2
             // 
             button2.BackColor = Color.FromArgb(32, 59, 73);
             button2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button2.ForeColor = SystemColors.ButtonHighlight;
-            button2.Location = new Point(347, 587);
+            button2.Location = new Point(328, 585);
             button2.Name = "button2";
             button2.Size = new Size(142, 51);
             button2.TabIndex = 35;
             button2.Text = "Book";
             button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // button1
             // 
@@ -148,13 +124,26 @@ namespace WinFormsApp1
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
-            // comboBox1
+            // comboBoxDoctors
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(339, 47);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(151, 28);
-            comboBox1.TabIndex = 2;
+            comboBoxDoctors.FormattingEnabled = true;
+            comboBoxDoctors.Location = new Point(319, 457);
+            comboBoxDoctors.Name = "comboBoxDoctors";
+            comboBoxDoctors.Size = new Size(151, 28);
+            comboBoxDoctors.TabIndex = 2;
+            comboBoxDoctors.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
+            // 
+            // Doctor
+            // 
+            Doctor.AutoSize = true;
+            Doctor.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Doctor.ForeColor = SystemColors.ControlDarkDark;
+            Doctor.Location = new Point(69, 519);
+            Doctor.Name = "Doctor";
+            Doctor.Size = new Size(175, 28);
+            Doctor.TabIndex = 41;
+            Doctor.Text = "Payment Method";
+            Doctor.Click += label2_Click;
             // 
             // Book
             // 
@@ -184,12 +173,11 @@ namespace WinFormsApp1
         private PictureBox pictureBox1;
         private Label label1;
         private Panel panel1;
-        private ComboBox comboBox1;
+        private ComboBox comboBoxDoctors;
         private Button button1;
         private Button button2;
-        private Label label2;
-        private CheckBox checkBox1;
         private DataGridView dataGridView1;
-        private ComboBox comboBox2;
+        private ComboBox paymentmethod;
+        private Label Doctor;
     }
 }

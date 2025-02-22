@@ -5,5 +5,6 @@ namespace Clinic.DAL.Repository.Abstract
 {
     public interface IAppointmentRepository : IGenericRepository<Appointment>
     {
+        public Task<bool> IsDoctorAvailableAsync(int doctorId, DateTime appointmentTime);
     }
 }

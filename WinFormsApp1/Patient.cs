@@ -8,13 +8,22 @@ namespace WinFormsApp1
     {
         private readonly IPatientService _patientService;
         private readonly IExcelSheetService _excelSheetService;
+        private readonly IDoctorService _doctorService;
+        private readonly IAppointmentService _appointmentService;
+        private readonly IPaymentService _paymentService;
 
-        public PatientWindow(IPatientService patientService, IExcelSheetService excelSheetService)
+        public int RecId { get; }
+
+        public PatientWindow(IPatientService patientService, IExcelSheetService excelSheetService,IDoctorService doctorService,IAppointmentService appointmentService , IPaymentService paymentService,int recId)
         {
 
             InitializeComponent();
             _patientService = patientService;
             _excelSheetService = excelSheetService;
+            _doctorService = doctorService;
+            _appointmentService = appointmentService;
+            _paymentService = paymentService;
+            RecId = recId;
         }
         public PatientWindow()
         {
@@ -188,6 +197,13 @@ namespace WinFormsApp1
             {
                 MessageBox.Show("Error exporting Excel: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            int patientId = Convert.ToInt32(Patient_DGV.SelectedRows[0].Cells["Id"].Value);
+            Book book = new Book(_doctorService,patientId,_appointmentService,_paymentService,RecId);
+            book.Show();
         }
     }
 }

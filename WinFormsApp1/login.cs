@@ -1,5 +1,7 @@
 using Clinic.BLL.Repository.Abstract;
 using Clinic.BLL.Services.Abstract;
+using Clinic.DAL.Entities;
+using Microsoft.AspNetCore.Identity;
 
 namespace WinFormsApp1
 {
@@ -9,14 +11,22 @@ namespace WinFormsApp1
         private readonly IPatientService _patientService;
         private readonly IReceptionistService _receptionistService;
         private readonly IExcelSheetService _excelSheetService;
+        private readonly IDoctorService _doctorService;
+        private readonly IAppointmentService _appointmentService;
+        private readonly IPaymentService _paymentService;
+        private readonly UserManager<Receptionist> _userManager;
 
-        public login(IAuthService authService, IPatientService patientService, IReceptionistService receptionistService, IExcelSheetService excelSheetService)
+        public login(IAuthService authService, IPatientService patientService, IReceptionistService receptionistService, IExcelSheetService excelSheetService,IDoctorService doctorService,IAppointmentService appointmentService , IPaymentService paymentService,UserManager<Receptionist> userManager)
         {
             InitializeComponent();
             _authService = authService;
             _patientService = patientService;
             _receptionistService = receptionistService;
             _excelSheetService = excelSheetService;
+            _doctorService = doctorService;
+            _appointmentService = appointmentService;
+            _paymentService = paymentService;
+            _userManager = userManager;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -47,6 +57,8 @@ namespace WinFormsApp1
 
             bool isAuthenticated = await _authService.LoginUser(username, password);
 
+           //find user
+           var user =await _userManager.FindByNameAsync(username);
 
             // Check if user is admin
             bool isAdmin = await _authService.CheckAdminRole(username);
@@ -55,7 +67,7 @@ namespace WinFormsApp1
             {
                 MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                Home homeForm = new Home(_patientService, isAdmin, _receptionistService, _authService, _excelSheetService);
+                Home homeForm = new Home(_patientService, isAdmin, _receptionistService, _authService, _excelSheetService,_doctorService,_appointmentService ,_paymentService,user.Id);
                 homeForm.Show();
                 this.Hide();
             }
