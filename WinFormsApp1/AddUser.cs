@@ -11,21 +11,21 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
 
+
 namespace WinFormsApp1
 {
     public partial class AddUser : Form
     {
         private readonly IReceptionistService _receptionistService;
         private readonly IAuthService _authService;
-
-        public AddUser(IReceptionistService receptionistService , IAuthService authService)
+        public AddUser(IReceptionistService receptionistService, IAuthService authService)
         {
             InitializeComponent();
             _receptionistService = receptionistService;
             _authService = authService;
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void AddUser_Load(object sender, EventArgs e)
         {
 
         }
@@ -55,6 +55,32 @@ namespace WinFormsApp1
             {
                 MessageBox.Show("Failed to add user. Please try again.");
             }
+
+        }
+
+        private void AddPatient_Name_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AddPatient_Age_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AddPatient_Phone_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AddPatient_Email_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

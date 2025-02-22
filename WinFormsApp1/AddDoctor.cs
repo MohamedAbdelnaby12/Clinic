@@ -69,7 +69,7 @@ namespace WinFormsApp1
                 MessageBox.Show("The entered Schedule ID does not exist.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            
+
 
             var newdoc = new Clinic.DAL.Entities.Doctor
             {
@@ -118,6 +118,11 @@ namespace WinFormsApp1
         }
 
         private void AddDoctor_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
         {
 
         }
