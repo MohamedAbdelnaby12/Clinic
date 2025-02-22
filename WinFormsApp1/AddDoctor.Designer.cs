@@ -46,6 +46,7 @@
             pictureBox3 = new PictureBox();
             pictureBox1 = new PictureBox();
             textBox5 = new TextBox();
+            panel6 = new Panel();
             label3 = new Label();
             panel5.SuspendLayout();
             panel4.SuspendLayout();
@@ -53,6 +54,7 @@
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            panel6.SuspendLayout();
             SuspendLayout();
             // 
             // button1
@@ -220,11 +222,21 @@
             // 
             // textBox5
             // 
-            textBox5.Location = new Point(145, 560);
+            textBox5.Location = new Point(10, 21);
             textBox5.Name = "textBox5";
             textBox5.Size = new Size(399, 27);
             textBox5.TabIndex = 0;
             textBox5.TextChanged += textBox5_TextChanged;
+            // 
+            // panel6
+            // 
+            panel6.BackColor = Color.White;
+            panel6.BorderStyle = BorderStyle.FixedSingle;
+            panel6.Controls.Add(textBox5);
+            panel6.Location = new Point(138, 554);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(423, 70);
+            panel6.TabIndex = 48;
             // 
             // label3
             // 
@@ -232,10 +244,10 @@
             label3.BackColor = Color.White;
             label3.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = SystemColors.ControlDarkDark;
-            label3.Location = new Point(145, 518);
+            label3.Location = new Point(163, 542);
             label3.Name = "label3";
             label3.Size = new Size(97, 28);
-            label3.TabIndex = 47;
+            label3.TabIndex = 1;
             label3.Text = "Schedule";
             // 
             // AddDoctor
@@ -245,8 +257,8 @@
             BackColor = Color.FromArgb(32, 59, 73);
             ClientSize = new Size(697, 749);
             Controls.Add(label3);
+            Controls.Add(panel6);
             Controls.Add(textBox4);
-            Controls.Add(textBox5);
             Controls.Add(button1);
             Controls.Add(label2);
             Controls.Add(label1);
@@ -271,6 +283,8 @@
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            panel6.ResumeLayout(false);
+            panel6.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -294,6 +308,7 @@
         private PictureBox pictureBox1;
         private Panel panel3;
         private TextBox textBox5;
+        private Panel panel6;
         private Label label3;
     }
 }

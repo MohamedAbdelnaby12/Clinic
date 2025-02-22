@@ -63,7 +63,7 @@
             button1.BackColor = Color.FromArgb(32, 59, 73);
             button1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button1.ForeColor = SystemColors.ButtonHighlight;
-            button1.Location = new Point(256, 196);
+            button1.Location = new Point(256, 162);
             button1.Name = "button1";
             button1.Size = new Size(181, 77);
             button1.TabIndex = 37;
@@ -76,7 +76,7 @@
             button2.BackColor = Color.FromArgb(32, 59, 73);
             button2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button2.ForeColor = SystemColors.ButtonHighlight;
-            button2.Location = new Point(256, 351);
+            button2.Location = new Point(256, 297);
             button2.Name = "button2";
             button2.Size = new Size(181, 77);
             button2.TabIndex = 38;
@@ -89,7 +89,7 @@
             button3.BackColor = Color.FromArgb(32, 59, 73);
             button3.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button3.ForeColor = SystemColors.ButtonHighlight;
-            button3.Location = new Point(256, 525);
+            button3.Location = new Point(256, 468);
             button3.Name = "button3";
             button3.Size = new Size(181, 77);
             button3.TabIndex = 39;
@@ -102,7 +102,7 @@
             addUser.BackColor = Color.FromArgb(32, 59, 73);
             addUser.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             addUser.ForeColor = SystemColors.ButtonHighlight;
-            addUser.Location = new Point(256, 660);
+            addUser.Location = new Point(256, 622);
             addUser.Name = "addUser";
             addUser.Size = new Size(181, 77);
             addUser.TabIndex = 40;

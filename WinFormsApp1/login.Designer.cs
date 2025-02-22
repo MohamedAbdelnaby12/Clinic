@@ -111,6 +111,7 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(442, 81);
             panel2.TabIndex = 26;
+            panel2.Paint += panel2_Paint;
             // 
             // pictureBox5
             // 
