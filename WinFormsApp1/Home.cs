@@ -25,8 +25,13 @@ namespace WinFormsApp1
         private readonly IReceptionistService _receptionistService;
         private readonly IAuthService _authService;
         private readonly IExcelSheetService _excelSheetService;
+        private readonly IDoctorService _doctorService;
+        private readonly IAppointmentService _appointmentService;
+        private readonly IPaymentService _paymentService;
 
-        public Home(IPatientService patientService, bool isAdmin, IReceptionistService receptionistService, IAuthService authService, IExcelSheetService excelSheetService)
+        public int RecId { get; }
+
+        public Home(IPatientService patientService, bool isAdmin, IReceptionistService receptionistService, IAuthService authService, IExcelSheetService excelSheetService,IDoctorService doctorService,IAppointmentService appointmentService, IPaymentService paymentService,int RecId)
         {
             InitializeComponent();
             _patientService = patientService;
@@ -34,6 +39,10 @@ namespace WinFormsApp1
             _receptionistService = receptionistService;
             _authService = authService;
             _excelSheetService = excelSheetService;
+            _doctorService = doctorService;
+            _appointmentService = appointmentService;
+            _paymentService = paymentService;
+            this.RecId = RecId;
         }
 
         private void Home_Load(object sender, EventArgs e)
@@ -59,7 +68,7 @@ namespace WinFormsApp1
             //Patient Patient = new Patient();
             //Patient.Show();
             ////this.Hide();
-            PatientWindow Patient = new PatientWindow(_patientService, _excelSheetService);
+            PatientWindow Patient = new PatientWindow(_patientService, _excelSheetService,_doctorService,_appointmentService,_paymentService,RecId);
             Patient.Show();
             //this.Hide();
         }

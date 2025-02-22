@@ -186,6 +186,7 @@
             gender.Name = "gender";
             gender.Size = new Size(399, 28);
             gender.TabIndex = 29;
+            gender.SelectedIndexChanged += gender_SelectedIndexChanged;
             // 
             // panel2
             // 
