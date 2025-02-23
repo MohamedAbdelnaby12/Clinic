@@ -11,6 +11,7 @@ using Clinic.DAL.Repository.Implementation;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 
 
 namespace WinFormsApp1
@@ -31,16 +32,31 @@ namespace WinFormsApp1
 
 
             ApplicationConfiguration.Initialize();
-
+           
             #region Initialize DI Container
             var services = new ServiceCollection();
             ConfigureServices(services);
             ServiceProvider = services.BuildServiceProvider();
 
-            //Seed Data
-            await SeedAdminUser(ServiceProvider);
+            
             #endregion
+            #region Update database
 
+            using var scope = ServiceProvider.CreateScope();
+            var serviceProvider = scope.ServiceProvider;
+            try
+            {
+                var dbcontext = serviceProvider.GetRequiredService<ClinicDbContext>();
+                await dbcontext.Database.MigrateAsync();
+                //Seed Data
+                await SeedAdminUser(ServiceProvider);
+            }
+            catch (Exception ex)
+            {
+                await Console.Out.WriteLineAsync("error while trying to update database");
+            }
+
+            #endregion
             #region Run Application With DI
             var loginForm = ServiceProvider.GetRequiredService<login>();
             Application.Run(loginForm);
