@@ -50,7 +50,24 @@ namespace WinFormsApp1
 
         }
 
-        private async void button1_Click(object sender, EventArgs e)
+        
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private async void button2_Click(object sender, EventArgs e)
         {
             TimeOnly startTime = TimeOnly.FromDateTime(dateTimePicker1.Value);
             TimeOnly endTime = TimeOnly.FromDateTime(dateTimePicker2.Value);
@@ -68,21 +85,6 @@ namespace WinFormsApp1
             await _scheduleService.AddAsync(schedule);
             MessageBox.Show("Schedule added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Close();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click_1(object sender, EventArgs e)
-        {
-
         }
     }
 }

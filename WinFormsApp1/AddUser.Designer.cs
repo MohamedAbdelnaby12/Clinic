@@ -224,6 +224,7 @@
             Controls.Add(pictureBox3);
             Controls.Add(pictureBox1);
             Name = "AddUser";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "AddUser";
             Load += AddUser_Load;
             panel5.ResumeLayout(false);
