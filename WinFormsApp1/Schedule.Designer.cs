@@ -52,6 +52,7 @@
             button2.TabIndex = 63;
             button2.Text = "Add";
             button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // pictureBox3
             // 
@@ -133,6 +134,7 @@
             Controls.Add(pictureBox3);
             Controls.Add(pictureBox1);
             Name = "Schedule";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Schedule";
             Load += Schedule_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();

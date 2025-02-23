@@ -258,6 +258,7 @@ namespace WinFormsApp1
             Controls.Add(pictureBox1);
             Margin = new Padding(3, 4, 3, 4);
             Name = "UpdateDoctor";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "UpdateDoctor";
             Load += UpdateDoctor_Load;
             panel5.ResumeLayout(false);

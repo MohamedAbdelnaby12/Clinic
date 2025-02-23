@@ -268,6 +268,7 @@
             Controls.Add(logoname);
             ForeColor = SystemColors.ControlDarkDark;
             Name = "AddPatient";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "AddPatient";
             Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

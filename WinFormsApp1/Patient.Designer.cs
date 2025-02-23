@@ -207,6 +207,7 @@
             Controls.Add(logoname);
             Margin = new Padding(3, 4, 3, 4);
             Name = "PatientWindow";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Patient";
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

@@ -272,6 +272,7 @@
             Controls.Add(pictureBox1);
             Margin = new Padding(3, 4, 3, 4);
             Name = "AddDoctor";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "AddDoctor";
             Load += AddDoctor_Load;
             panel5.ResumeLayout(false);

@@ -163,6 +163,7 @@
             Controls.Add(pictureBox3);
             Controls.Add(pictureBox1);
             Name = "Doctor";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Doctor";
             Load += Doctor_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();

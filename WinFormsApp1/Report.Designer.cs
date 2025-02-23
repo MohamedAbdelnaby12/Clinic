@@ -103,6 +103,7 @@
             Controls.Add(pictureBox1);
             Margin = new Padding(3, 4, 3, 4);
             Name = "Report";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Report";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();

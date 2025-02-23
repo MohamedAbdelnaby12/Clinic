@@ -2,6 +2,7 @@
 using Clinic.DAL.Entities;
 using Clinic.DAL.Enums;
 using OfficeOpenXml;
+using System.Reflection;
 
 
 namespace Clinic.BLL.Services
@@ -41,12 +42,90 @@ namespace Clinic.BLL.Services
                 File.WriteAllBytes(filePath, package.GetAsByteArray());
             }
         }
+        ////public List<Patient> ImportPatientsFromExcel(string filePath)
+        ////{
+        ////    List<Patient> patients = new List<Patient>();
+
+        ////    ExcelPackage.LicenseContext = LicenseContext.NonCommercial; // Required for EPPlus
+
+        ////    using (var package = new ExcelPackage(new FileInfo(filePath)))
+        ////    {
+        ////        var worksheet = package.Workbook.Worksheets.FirstOrDefault();
+        ////        if (worksheet == null)
+        ////            return null;
+
+        ////        PropertyInfo[] patientProperties = typeof(Patient).GetProperties();
+        ////        Dictionary<string, int> columnMapping = new Dictionary<string, int>();
+
+        ////        for (int col = 1; col <= worksheet.Dimension.End.Column; col++)
+        ////        {
+        ////            string columnName = worksheet.Cells[1, col].Text.Trim();
+        ////            PropertyInfo property = patientProperties.FirstOrDefault(p => string.Equals(p.Name, columnName, StringComparison.OrdinalIgnoreCase));
+
+        ////            if (property != null)
+        ////            {
+        ////                columnMapping[columnName] = col;
+        ////            }
+        ////        }
+
+        ////        if (columnMapping.Count == 0)
+        ////            return null;
+
+        ////        for (int row = 2; row <= worksheet.Dimension.End.Row; row++)
+        ////        {
+        ////            if (string.IsNullOrWhiteSpace(worksheet.Cells[row, 1].Text)) continue; // تخطي الصفوف الفارغة
+
+        ////            Patient patient = new Patient();
+
+        ////            foreach (var mapping in columnMapping)
+        ////            {
+        ////                string columnName = mapping.Key;
+        ////                int columnIndex = mapping.Value;
+        ////                string cellValue = worksheet.Cells[row, columnIndex].Text;
+
+        ////                PropertyInfo property = patientProperties.FirstOrDefault(p => p.Name.Equals(columnName, StringComparison.OrdinalIgnoreCase));
+
+        ////                if (property != null)
+        ////                {
+        ////                    object value = ConvertValue(cellValue, property.PropertyType);
+        ////                    property.SetValue(patient, value);
+        ////                }
+        ////            }
+
+        ////            patients.Add(patient);
+        ////        }
+        ////    }
+
+        ////    return patients;
+        ////}
+
+
+
+        private object ConvertValue(string value, Type targetType)
+        {
+            if (string.IsNullOrWhiteSpace(value))
+                return null;
+
+            if (targetType == typeof(int))
+                return int.TryParse(value, out int result) ? result : 0;
+
+            if (targetType == typeof(double))
+                return double.TryParse(value, out double result) ? result : 0.0;
+
+            if (targetType == typeof(bool))
+                return bool.TryParse(value, out bool result) ? result : false;
+
+            if (targetType.IsEnum)
+                return Enum.TryParse(targetType, value, out object enumValue) ? enumValue : null;
+
+            return value; 
+        }
 
         public List<Patient> ImportPatientsFromExcel(string filePath)
         {
             List<Patient> patients = new List<Patient>();
 
-            ExcelPackage.LicenseContext = LicenseContext.NonCommercial; // Required for EPPlus
+            ExcelPackage.LicenseContext = LicenseContext.NonCommercial; 
 
             using (var package = new ExcelPackage(new FileInfo(filePath)))
             {

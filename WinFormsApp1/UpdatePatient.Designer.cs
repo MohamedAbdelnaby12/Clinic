@@ -264,6 +264,7 @@
             Controls.Add(logoname);
             ForeColor = SystemColors.ControlDarkDark;
             Name = "UpdatePatient";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "UpdatePatient";
             Load += UpdatePatient_Load;
             panel5.ResumeLayout(false);
